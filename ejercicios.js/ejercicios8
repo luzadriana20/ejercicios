@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html data-ng-app=myApp>
+<head>
+	<body>
+<div>
+<meta charset="utf-8">
+<script src="angular.min.js"></script>
+<label>Nombre:</label>
+<p>
+<input type="nombre" ng-model="name"></p>
+
+<label>Apellido:</label>
+<p>
+<input type="apellido" ng-model="lastname"></p>
+<p>
+<label>{{ " Hola " + name + " "+ lastname}}</label></p>
+</div>
+
+
+<div>
+<script type="angular.min.js"></script>
+<label>operando1</label>
+<p>
+<input type="number" ng-model="numero1"></p>
+<label>operando2</label>
+<p>
+<input type="number" ng-model="numero2"></p>
+<p>
+<button ng-click="resultado=numero1+numero2">+</button></p>
+<p>
+<label>{{resultado}}</label></p>
+</div>
+
+
+    	<div>
+    	<script type="angular.min.js"></script>
+		<input type="text" ng-model="texto" placeholder="Enter you input here...">
+		<p>{{texto }}</p>
+		<p ng-style="texto == (texto | reverse) ? {color:'red'} : {color:'blue'}">{{texto | reverse}}</p>
+    	</div>
+    	<p>{{texto == (texto | reverse) ? 'palindromo' : 'no palindromo'}}</p>
+    </form>
+    <script>
+		var myApp = angular.module('myApp',[]);
+		myApp.filter('reverse', function() {
+			return function(input) {
+				return input.split("").reverse().join("");
+			};
+		});
+
+	</script>
+	
+        </div>
+	</head>
+
+</body>
+</html>
